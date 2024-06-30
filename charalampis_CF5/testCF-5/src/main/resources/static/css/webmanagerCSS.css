@@ -1,0 +1,50 @@
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    
+}
+.content {
+	display: flex;
+    justify-content: space-between;
+    padding: 1%;;
+}
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.metric-card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #191970;
+    border-radius: 6px;
+}
+
+.dashboard-container h1 {
+    font-size: 1.4em;
+    color: #191970;
+    margin-bottom: 10px;
+}
+
+.metric-card h2 {
+    font-size: 1em;
+    color: #191970;
+    margin-bottom: 10px;
+}
+
+.metric-card p {
+    font-size: 0.8em;
+    color: #333333;
+}
+
+.online {
+	color:limegreen;
+	font-size: large;
+	font-weight: bold;
+}

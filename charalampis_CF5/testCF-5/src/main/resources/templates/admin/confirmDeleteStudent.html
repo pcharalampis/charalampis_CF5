@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" th:href="@{/css/deletePopupCSS.css}"/>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Confirm Delete</h2>
+            <p>
+                You are about to delete student:<br>
+                <span class="bordered-name" th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+            </p>
+            <p>This operation cannot be undone.<br>Are you sure?</p>
+            <a th:href="@{/admin/deleteStudent/{id}(id=${student.id})}" class="button">Delete</a>
+            <a th:href="@{/admin/studManager}" class="button button-cancel">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>

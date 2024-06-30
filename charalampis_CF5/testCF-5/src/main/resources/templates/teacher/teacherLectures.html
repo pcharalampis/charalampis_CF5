@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/teachLecturesCSS.css}"/>
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarTeacher"></div>
+	<!-- CONTENT -->
+    <div class="container">
+        <h1>myLectures</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Length (hrs)</th>
+                    <th>Students Attended</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-06-01</td>
+                    <td>2</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>2024-06-08</td>
+                    <td>1.5</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>2024-06-15</td>
+                    <td>2</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>2024-06-22</td>
+                    <td>1</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>2024-06-29</td>
+                    <td>1.5</td>
+                    <td>32</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

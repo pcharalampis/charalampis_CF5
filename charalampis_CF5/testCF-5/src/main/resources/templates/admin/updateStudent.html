@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/newEntryCSS.css}"/>
+    <title>updateStudent</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+    <!-- NAVBAR -->
+    <div th:include="public/fragments/navbarAdmin"></div>
+	<!-- CONTENT -->
+	<div class="form-container">
+        <h2>Update Student</h2>
+        <form th:action="@{/admin/saveStudent}" th:object="${student}" method="post">
+			<input type="hidden" th:field="*{id}"/>
+
+            <input type="text" th:field="*{firstName}" id="firstName" name="firstName" placeholder="Enter first name" required>
+
+            <input type="text" th:field="*{lastName}" id="lastName" name="lastName" placeholder="Enter last name" required>
+
+            <input type="email" th:field="*{email}" id="email" name="email" placeholder="Enter email" required>
+            
+            <input type="datetime" th:field="*{birthDate}" id="birthDate" name="birthDate" placeholder="Enter date of birth" required>
+
+            <button type="submit" class="button">Update</button>
+        </form>
+        <hr>
+        <a th:href = "@{/admin/studManager}">Back</a>
+    </div>
+	<!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

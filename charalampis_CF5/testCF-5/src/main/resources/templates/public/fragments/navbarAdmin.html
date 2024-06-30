@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+    <title>NavbarAdmin</title>
+</head>
+<body>
+    <div>
+        <nav class="navbar-nav">
+			<div class="navbar">
+				<a href="/admin/adminDashboard" style="color: #191970; margin: 0 1em;">Home</a>
+	            <a href="/admin/teachManager" style="color: #191970; margin: 0 1em;">Teachers</a>
+	            <a href="/admin/studManager" style="color: #191970; margin: 0 1em;">Students</a>
+	            <a href="/admin/webManager" style="color: #191970; margin: 0 1em;">Website</a>
+            </div>
+            <div>
+                <span th:text="${username}" style="color: #191970; margin-right: 1em;"></span>
+                <a href="/logout" class="btnOut" style="color: white;">Logout</a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+    <title>NavbarStudent</title>
+</head>
+<body>
+    <div>
+        <nav class="navbar-nav">
+			<div class="navbar">
+	            <a href="/student/home" style="color: #191970; margin: 0 1em;">Home</a>
+	            <a href="/student/studentCourses" style="color: #191970; margin: 0 1em;">Courses</a>
+	            <a href="/student/studentGrades" style="color: #191970; margin: 0 1em;">Grades</a>
+	            <a href="/student/studentProgress" style="color: #191970; margin: 0 1em;">Progress</a>
+            </div>
+            <div>
+                <span th:text="${username}" style="color: #191970; margin-right: 1em;"></span>
+                <a href="/logout" class="btnOut" style="color: white;">Logout</a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

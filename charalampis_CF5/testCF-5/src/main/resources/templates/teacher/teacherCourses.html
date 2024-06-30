@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/teachCoursesCSS.css}"/>
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarTeacher"></div>
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>My Courses</h1>
+        <p>This page lists all the courses that this teacher teaches.</p>
+        <div th:each="studentCourse : ${studentCourses}" class="course">
+            <h2 th:text="${studentCourse.course.name}"></h2>
+            <div class="course-description">
+                <p th:text="${studentCourse.course.description}"></p>
+            </div>
+            <div class="course-details">
+                <p>Total Hours: <span th:text="${studentCourse.course.attendHrsMax}"></span></p>
+                <p>Minimum Attendance Hours: <span th:text="${studentCourse.course.attendHrsMin}"></span></p>
+                <p>Attended Hours: <span th:text="${studentCourse.attendHrs}"></span></p>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

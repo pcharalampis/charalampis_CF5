@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarTeacher"></div>
+    <!-- CONTENT -->    
+    <div class="content">
+        <div class="container">
+            <h2>Welcome to the Teacher Dashboard</h2>
+            <p>This is a secure area for teachers.</p>
+        </div>
+    </div>
+	<!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

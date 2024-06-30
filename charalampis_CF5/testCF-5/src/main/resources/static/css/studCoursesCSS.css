@@ -1,0 +1,45 @@
+body {
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    color: #191970;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+}
+
+.course {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+    width: calc(33.33% - 20px);
+    float: left;
+    box-sizing: border-box;
+    margin-right: 20px;
+	transition: box-shadow 0.3s;
+}
+
+.course:hover {
+    box-shadow: 3px 3px 10px #191970;
+}
+
+.course:last-child {
+    margin-right: 0;
+}
+
+.course h2 {
+    margin-top: 0;
+}
+
+.course-description {
+    margin-top: 1em;
+}
+
+.course-details {
+    margin-top: 0.5em;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" th:href="@{/css/newsCSS.css}" />
+    <script src="/js/toggleContent.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+    <!-- NAVBAR -->
+    <div th:include="public/fragments/navbar"></div>
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>Latest News</h1>
+        <p>Always stay informed about the latest news of our campus!</p>
+        <!-- News article 1 -->
+        <div class="news-article">
+            <h2>News Article 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus. <a href="#" class="read-more-btn" id="article1-read-more" onclick="toggleArticleContent('article1', event)">Read More</a></p>
+            <div class="article-content" id="article1-content">
+                Additional content for News Article 1.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus.</p>
+                <a href="#" class="show-less-btn" id="article1-show-less" style="display: none;" onclick="toggleArticleContent('article1', event)">Show Less</a>
+            </div>
+        </div>
+        <!-- News article 2 -->
+        <div class="news-article">
+            <h2>News Article 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus. <a href="#" class="read-more-btn" id="article2-read-more" onclick="toggleArticleContent('article2', event)">Read More</a></p>
+            <div class="article-content" id="article2-content">
+                Additional content for News Article 2.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus.</p>
+                <a href="#" class="show-less-btn" id="article2-show-less" style="display: none;" onclick="toggleArticleContent('article2', event)">Show Less</a>
+            </div>
+        </div>
+        <!-- News article 3 -->
+        <div class="news-article">
+            <h2>News Article 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus. <a href="#" class="read-more-btn" id="article3-read-more" onclick="toggleArticleContent('article3', event)">Read More</a></p>
+            <div class="article-content" id="article3-content">
+                Additional content for News Article 3.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo sit amet est condimentum fermentum at id metus.</p>
+                <a href="#" class="show-less-btn" id="article3-show-less" style="display: none;" onclick="toggleArticleContent('article3', event)">Show Less</a>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

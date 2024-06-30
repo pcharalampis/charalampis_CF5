@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+    <title>Admin</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+    <!-- NAVBAR -->
+    <div th:include="public/fragments/navbarAdmin"></div>
+    <!-- CONTENT -->
+    <div class="content-row">
+	    <div class="content">
+	        <div class="container">
+	            <h2>Teachers Management</h2>
+	            <p>View and manage all teachers. Update information, add a new teacher or remove one.</p>
+	            <a href="/admin/teachManager" class="button">View</a>
+	        </div>
+	    </div>
+	    <div class="content">
+	        <div class="container">
+	            <h2>Students Management</h2>
+	            <p>View and manage all students. Update information, add a new student or remove one.</p>
+	            <a href="/admin/studManager" class="button">View</a>
+	        </div>
+	    </div>
+	    <div class="content">
+	        <div class="container">
+	            <h2>Website Management</h2>
+	            <p>Manage website health, accounts and users, view statistics and run diagnostics.</p>
+	            <a href="/admin/webManager" class="button">View</a>
+	        </div>
+	    </div>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+	        <div class="container">
+	            <h2>Admin</h2>
+	            <p>This is a management tool for admin only! Use responsively.
+					<br>Please do not share sensitive information.
+					<br>Please be mindful of personal credentials.</p>
+	        </div>
+	    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

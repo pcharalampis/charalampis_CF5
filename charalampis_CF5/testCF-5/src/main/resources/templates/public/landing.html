@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myApp</title>
+	<link rel="stylesheet" th:href="@{/css/homeCSS.css}" />
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbar"></div>
+	<!-- CONTENT -->
+    <div class="content-row">
+		<!-- Welcome-->
+	    <div class="content content-left">
+	        <div class="container">
+	            <h1>Welcome to myApp</h1>
+	            <p>Where Students and Teachers Connect</p>
+	            <div>
+				  <img th:src="@{/images/homepage.jpg}" style="width:80%">
+				</div>
+				<p>Join our community today.</p>
+	        </div>
+	    </div>
+	    <!-- Login -->
+	    <div class="content content-right">
+	        <div class="container">
+	            <h1 style="font-size: larger;">Login with one click!</h1>
+	            <p>Keep track of your progress easily</p>
+	            <a href="/loginForm" class="btn">Login</a>
+	            <br>
+	            <p>Not having an account yet? Register now!</p>
+	            <a href="/registration" class="btn-other">Register</a>
+	        </div>
+	    </div>
+	</div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

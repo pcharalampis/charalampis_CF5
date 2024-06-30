@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/studGradesCSS.css}"/>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+    <!-- NAVBAR -->
+    <div th:include="public/fragments/navbarStudent"></div>
+    <!-- CONTENT -->
+    <div style="display: flex;">
+	    <div class="course">
+	        <h2>Course 1</h2>
+	        <div class="grade-bar">
+	            <div class="grade-fill" style="width: 80%;"></div>
+	        </div>
+	        <p>Grade: 8/10</p>
+	        <p>Total Hours: 40</p>
+	        <p>Minimum Hours: 20</p>
+	        <p>Attended Hours: 30</p>
+	    </div>
+	
+	    <div class="course">
+	        <h2>Course 2</h2>
+	        <div class="grade-bar">
+	            <div class="grade-fill" style="width: 60%;"></div>
+	        </div>
+	        <p>Grade: 6/10</p>
+	        <p>Total Hours: 35</p>
+	        <p>Minimum Hours: 15</p>
+	        <p>Attended Hours: 25</p>
+	    </div>
+	
+	    <div class="course">
+	        <h2>Course 3</h2>
+	        <div class="grade-bar">
+	            <div class="grade-fill" style="width: 90%;"></div>
+	        </div>
+	        <p>Grade: 9/10</p>
+	        <p>Total Hours: 50</p>
+	        <p>Minimum Hours: 25</p>
+	        <p>Attended Hours: 40</p>
+	    </div>
+	
+	    <div class="course">
+	        <h2>Course 4</h2>
+	        <div class="grade-bar">
+	            <div class="grade-fill" style="width: 75%;"></div>
+	        </div>
+	        <p>Grade: 7.5/10</p>
+	        <p>Total Hours: 30</p>
+	        <p>Minimum Hours: 10</p>
+	        <p>Attended Hours: 20</p>
+	    </div>
+	
+	    <div class="course">
+	        <h2>Course 5</h2>
+	        <div class="grade-bar">
+	            <div class="grade-fill" style="width: 85%;"></div>
+	        </div>
+	        <p>Grade: 8.5/10</p>
+	        <p>Total Hours: 45</p>
+	        <p>Minimum Hours: 20</p>
+	        <p>Attended Hours: 35</p>
+	    </div>
+    </div>
+	<!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

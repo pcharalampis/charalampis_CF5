@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/studProgressCSS.css}"/>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarStudent"></div>
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>Student Progress</h1>
+        <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 70%;">
+                <span>70%</span>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div>Courses Passed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div>Courses Enrolled</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2</div>
+                <div>Courses Left</div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

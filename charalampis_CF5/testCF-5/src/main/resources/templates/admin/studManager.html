@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+    <title>Students Management System</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+    <!-- NAVBAR -->
+    <div th:include="public/fragments/navbarAdmin"></div>
+	<!-- CONTENT -->
+    <div class="content">
+		<!-- add new -->
+		<div class="container">
+			<a th:href = "@{/admin/showNewStudentForm}" class="button"> Add Student</a>
+		</div>
+		<!-- Table -->
+        <div class="container">
+			<h1>List</h1>
+				<table>
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Profession</th>
+							<th>Email</th>
+							<th>Date of birth</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each = "student: ${listStudents}">
+							<td th:text = "${student.firstName}"></td>
+							<td th:text = "${student.lastName}"></td>
+							<td th:text = "STUDENT"></td>
+							<td th:text = "${student.email}"></td>
+							<td th:text = "${student.birthDate}"></td>
+							<td> 
+								<a th:href = "@{/admin/showUpdateStudentForm/{id}(id=${student.id})}" class="button">Update</a>
+								<a th:href = "@{/admin/confirmDeleteStudent/{id}(id=${student.id})}" class="button">Delete</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

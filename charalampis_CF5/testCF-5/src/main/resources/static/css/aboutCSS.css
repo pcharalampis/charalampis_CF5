@@ -1,0 +1,29 @@
+body {
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    color: #191970;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.header-about {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #191970;
+    text-align: center;
+}
+
+.container p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/studCoursesCSS.css}"/>
+    <title>Student Dashboard</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarStudent"></div>
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>Available Courses</h1>
+        <p>This page lists the available courses on our platform.</p>
+    </div>
+    <!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>

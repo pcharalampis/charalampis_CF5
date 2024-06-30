@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.error-container {
+    border: 2px solid #191970;
+    border-radius: 8px;
+    background-color: white;
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-container h1 {
+    color: #191970;
+}
+
+.error-container p {
+    margin: 1em 0;
+}
+
+.error-container .btn {
+    background-color: #191970;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.error-container .btn:hover {
+    background-color: coral;
+}

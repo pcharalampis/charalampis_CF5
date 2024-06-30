@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/registrationCSS.css">  
+    <script src="/js/validatePassword.js"></script>
+    <script src="/js/showPopup.js"></script>
+    <script src="/js/goLogin.js"></script>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbar"></div>
+    <!-- C-->
+    <div th:if="${param.success}" class="popup-modal">
+	    <div class="popup-content">
+	        <h2>Success!</h2>
+	        <p>I would send you a confirmation email, but I haven't implemented this logic yet. <br>Welcome to myApp.</p>
+	        <button onclick="redirectToLogin()">Login</button>
+	    </div>
+	</div>
+	<!-- CONTENT -->
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form th:action="@{/registration}" method="post" th:object="${user}">
+			<!-- Registration Form -->
+			<div class="radio-btn">
+            	<label for="role" class="required"></label>
+		        <div>
+		            <input type="radio" id="student" name="role" value="STUDENT" required>
+		            <label for="student">Student</label>
+		            <input type="radio" id="teacher" name="role" value="TEACHER" required>
+		            <label for="teacher">Teacher</label>
+		        </div>
+        	</div>
+        	
+            <label for="firstName" class="required">First Name</label>
+            <input type="text" th:field="*{firstName}" id="firstName" name="firstName" placeholder="Enter first name" required autofocus="autofocus">
+
+            <label for="lastName" class="required">Last Name</label>
+            <input type="text" th:field="*{lastName}" id="lastName" name="lastName" placeholder="Enter last name" required>
+
+            <label for="email" class="required">Email</label>
+            <input type="email" th:field="*{email}" id="email" name="email" placeholder="Enter email" required>
+
+            <label for="username" class="required">Username</label>
+            <input type="text" th:field="*{username}" id="username" name="username" placeholder="Enter username" required>
+
+            <label for="password" class="required">Password</label>
+            <input type="password" th:field="*{password}" id="password" name="password" placeholder="Enter password" required>
+
+			<label for="confirmPassword" class="required">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required oninput="validatePassword()">
+            
+            <div class="checkbox-container" style="font-size: small;">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" class="required">I agree with the <a href="#" onclick="showPopup('terms-popup')">terms of use</a></label>
+            </div>
+            <div class="checkbox-container" style="font-size: small;">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy" class="required">I agree with the <a href="#" onclick="showPopup('privacy-popup')">privacy policy</a></label>
+            </div>
+            <button type="submit" class="button">Register</button>
+        </form>
+    </div>
+    
+    <div class="form-container">
+		<span>Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
+	</div>
+    
+    
+    <!-- Popup -->
+    <div id="terms-popup" class="popup-modal" style="display: none;">
+        <div class="popup-content">
+            <h3>Terms of Use</h3>
+            <p><b>1.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	            </p>
+	            <p><b>2.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	            </p>
+	            <p><b>3.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <button onclick="closePopup('terms-popup')" class="button">I understand</button>
+        </div>
+    </div>
+    <!-- Popup -->
+    <div id="privacy-popup" class="popup-modal" style="display: none;">
+        <div class="popup-content">
+            <h3>Privacy Policy</h3>
+			<p><b>1.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	            </p>
+	            <p><b>2.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	            </p>
+	            <p><b>3.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+	            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <button onclick="closePopup('privacy-popup')" class="button">I understand</button>
+        </div>
+    </div>
+	<!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div> 
+</body>
+</html>

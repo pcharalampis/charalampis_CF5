@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/indexCSS.css}"/>
+    <title>Teachers Management System</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <div th:include="public/fragments/header"></div>
+	<!-- NAVBAR -->
+    <div th:include="public/fragments/navbarAdmin"></div>
+	<!-- CONTENT -->
+    <div class="content">
+		<!-- add new -->
+		<div class="container">
+			<a th:href = "@{/admin/showNewTeacherForm}" class="button"> Add Teacher</a>
+		</div>
+		<!-- Table -->
+        <div class="container">
+			<h1>List</h1>
+				<table>
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Profession</th>
+							<th>Email</th>
+							<th>Subject</th>
+							<th>Actions</th>
+							<th>Stats</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each = "teacher: ${listTeachers}">
+							<td th:text = "${teacher.firstName}"></td>
+							<td th:text = "${teacher.lastName}"></td>
+							<td th:text = "TEACHER"></td>
+							<td th:text = "${teacher.email}"></td>
+							<td th:text = "course"></td>
+							<td> 
+								<a th:href = "@{/admin/showUpdateTeacherForm/{id}(id=${teacher.id})}" class="button">Update</a>
+								<a th:href="@{/admin/confirmDeleteTeacher/{id}(id=${teacher.id})}" class="button">Delete</a>
+							</td>
+							<td>
+								<a th:href = "@{/admin/showUpdateTeacherForm/{id}(id=${teacher.id})}" class="button">View Tab</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+        </div>
+    </div>
+	<!-- FOOTER -->
+    <div th:include="public/fragments/footer"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
